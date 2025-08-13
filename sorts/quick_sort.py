@@ -8,8 +8,7 @@ For manual testing run:
 python3 quick_sort.py
 """
 from __future__ import annotations
-
-from random import randrange
+import secrets
 
 
 def quick_sort(collection: list) -> list:
@@ -28,7 +27,7 @@ def quick_sort(collection: list) -> list:
     """
     if len(collection) < 2:
         return collection
-    pivot_index = randrange(len(collection))  # Use random element as pivot
+    pivot_index = secrets.SystemRandom().randrange(len(collection))  # Use random element as pivot
     pivot = collection[pivot_index]
     greater: list[int] = []  # All elements greater than pivot
     lesser: list[int] = []  # All elements less than or equal to pivot
